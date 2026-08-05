@@ -219,7 +219,9 @@
          around it, its internals are configured in HubSpot meeting-link settings.
          A styled static form variant exists in git history if a form is preferred. -->
     <div class="book__widget">
-      <div class="meetings-iframe-container" data-src="https://www.paysauce.com/meetings/anna-cochrane/paysauce-personalised-demo?embed=true"></div>
+      <!-- data-src uses HubSpot's native meetings domain: the www.paysauce.com/meetings/... variant
+           sends x-frame-options SAMEORIGIN and only embeds on paysauce.com pages. This one embeds anywhere. -->
+      <div class="meetings-iframe-container" data-src="https://meetings-ap1.hubspot.com/anna-cochrane/paysauce-personalised-demo?embed=true"></div>
     </div>
     <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
     <p class="book__privacy">We will only use these details to arrange your demo. <a href="https://www.paysauce.com/nz/privacy-policy">Privacy policy</a></p>
