@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a 15-minute payroll demo | PaySauce Australia</title>
+<meta name="description" content="See PaySauce run Australian payroll live: awards, super, STP. A 15-minute demo with a payroll person, no obligation.">
+<!-- HUBSPOT NOTE: when converting to a HubSpot template, insert {{ standard_header_includes }} here -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --hot-chilli-500: #d84727;
+    --hot-chilli-400: #ff725b;
+    --hot-chilli-200: #fecfb7;
+    --aioli-500: #fdf4e8;
+    --blueberry-500: #2e5266;
+    --mint-500: #8ea604;
+    --neutral-0: #ffffff;
+    --neutral-100: #eaeaea;
+    --neutral-300: #b4b3b3;
+    --neutral-500: #7e7b7b;
+    --neutral-700: #4c4747;
+    --neutral-900: #2d2a2a;
+    --font-montserrat: "Montserrat", sans-serif;
+    --font-inter: "Inter", sans-serif;
+    --radius-button: 2px;
+    --radius-field: 6px;
+    --radius-card: 16px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-inter);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--neutral-700);
+    background: var(--neutral-0);
+  }
+  img { max-width: 100%; display: block; }
+  .container { max-width: 1024px; margin: 0 auto; padding: 0 1.25rem; }
+  .container--narrow { max-width: 720px; }
+
+  h1, h2, h3 { font-family: var(--font-montserrat); font-weight: 800; color: var(--blueberry-500); }
+  h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.2; }
+  h2 { font-size: clamp(24px, 4vw, 36px); line-height: 1.3; }
+  h3 { font-size: 20px; line-height: 1.3; }
+
+  .button {
+    display: inline-block;
+    font-family: var(--font-montserrat);
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    padding: 1rem 2rem;
+    border-radius: var(--radius-button);
+    border: 2px solid var(--hot-chilli-500);
+    background: var(--hot-chilli-500);
+    color: var(--neutral-0);
+    cursor: pointer;
+    transition: background-color .15s ease, border-color .15s ease;
+  }
+  .button:hover { background: var(--neutral-900); border-color: var(--neutral-900); }
+
+  /* ---------- nav (stripped: logo + CTA only) ---------- */
+  .nav { background: var(--neutral-0); border-bottom: 1px solid var(--neutral-100); }
+  .nav__inner { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; max-width: 1280px; margin: 0 auto; }
+  .nav__logo img { height: 34px; width: auto; }
+  .nav .button { padding: .65rem 1.25rem; font-size: 14px; }
+
+  /* ---------- hero ---------- */
+  .hero { background: var(--aioli-500); padding: 4.5rem 0 4rem; text-align: center; }
+  .hero__eyebrow {
+    font-family: var(--font-montserrat); font-weight: 800; font-size: 13px;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--hot-chilli-500);
+    margin-bottom: 1rem;
+  }
+  .hero h1 { max-width: 720px; margin: 0 auto 1.25rem; }
+  .hero__sub { font-size: 18px; max-width: 560px; margin: 0 auto 2rem; color: var(--neutral-700); }
+  .hero__note { margin-top: .875rem; font-size: 14px; color: var(--neutral-500); }
+
+  /* ---------- proof bar ---------- */
+  .proof { padding: 1.5rem 0; border-bottom: 1px solid var(--neutral-100); }
+  .proof__inner { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; text-align: center; }
+  .proof__item strong { display: block; font-family: var(--font-montserrat); font-weight: 800; font-size: 20px; color: var(--blueberry-500); }
+  .proof__item span { font-size: 14px; color: var(--neutral-500); }
+
+  /* ---------- story ---------- */
+  .story { padding: 4rem 0; }
+  .story__card {
+    background: var(--neutral-0); border: 1px solid var(--neutral-100);
+    border-radius: var(--radius-card); padding: 2.5rem;
+  }
+  .story__quote { font-size: clamp(19px, 2.6vw, 24px); line-height: 1.45; color: var(--neutral-900); font-weight: 500; }
+  .story__quote::before { content: "\201C"; color: var(--hot-chilli-500); }
+  .story__quote::after { content: "\201D"; color: var(--hot-chilli-500); }
+  .story__attr { margin-top: 1.25rem; font-size: 15px; color: var(--neutral-500); }
+  .story__attr strong { color: var(--neutral-700); }
+  .story__context { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--neutral-100); font-size: 15px; color: var(--neutral-500); }
+
+  /* ---------- how it works ---------- */
+  .how { background: var(--aioli-500); padding: 4rem 0; }
+  .how h2 { text-align: center; margin-bottom: 2.5rem; }
+  .how__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .how__step { background: var(--neutral-0); border-radius: var(--radius-card); padding: 1.75rem; }
+  .how__num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--hot-chilli-500); color: var(--neutral-0);
+    font-family: var(--font-montserrat); font-weight: 800; font-size: 16px;
+    margin-bottom: 1rem;
+  }
+  .how__step h3 { margin-bottom: .5rem; }
+  .how__step p { font-size: 15px; }
+
+  /* ---------- form ---------- */
+  .book { padding: 4.5rem 0; }
+  .book h2 { text-align: center; margin-bottom: .75rem; }
+  .book__sub { text-align: center; max-width: 480px; margin: 0 auto 2.5rem; }
+  .book__widget {
+    max-width: 720px; margin: 0 auto; background: var(--neutral-0);
+    border: 1px solid var(--neutral-100); border-radius: var(--radius-card);
+    padding: 1rem; overflow: hidden;
+  }
+  .book__widget .meetings-iframe-container { min-height: 640px; }
+  .book__privacy { margin-top: 1rem; font-size: 13px; color: var(--neutral-500); text-align: center; }
+  .book__privacy a { color: var(--neutral-500); }
+
+  /* ---------- footer ---------- */
+  .footer { border-top: 1px solid var(--neutral-100); padding: 1.5rem 0; }
+  .footer__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .footer__inner img { height: 22px; width: auto; }
+  .footer__links { display: flex; gap: 1.5rem; font-size: 13px; }
+  .footer__links a { color: var(--neutral-500); text-decoration: none; }
+  .footer__links a:hover { color: var(--neutral-700); }
+
+  @media (max-width: 760px) {
+    .hero { padding: 3rem 0 2.75rem; }
+    .how__grid { grid-template-columns: 1fr; }
+    .story__card { padding: 1.75rem; }
+    .proof__inner { gap: 1.5rem; }
+    .nav .button { letter-spacing: 1px; padding: .6rem .9rem; font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="nav__logo" href="https://www.paysauce.com/au" aria-label="PaySauce Australia">
+      <img src="https://www.paysauce.com/hs-fs/hubfs/Logos/PaySauce-horizontal(red).png?width=600&name=PaySauce-horizontal(red).png" alt="PaySauce">
+    </a>
+    <a class="button" href="#book">Book a demo</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <p class="hero__eyebrow">PaySauce Australia</p>
+    <h1>Payroll with the hard parts handled. See it live in 15 minutes.</h1>
+    <p class="hero__sub">A short demo with a payroll person, on your screen. Bring your award questions, your super questions, your trickiest pay run. No slides and no obligation.</p>
+    <a class="button" href="#book">Book my 15-minute demo</a>
+    <p class="hero__note">Pick a time that suits. You will talk to someone who does payroll, not a script.</p>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="container proof__inner">
+    <div class="proof__item"><strong>4.8 out of 5</strong><span>buyer rating, Xero App Store</span></div>
+    <div class="proof__item"><strong>Awards interpreted</strong><span>Fair Work award rates applied for you</span></div>
+    <div class="proof__item"><strong>Super and STP built in</strong><span>paid and reported with every pay</span></div>
+  </div>
+</section>
+
+<section class="story">
+  <div class="container container--narrow">
+    <div class="story__card">
+      <p class="story__quote">PaySauce is fantastic. To be a one-stop shop, that one-click payroll, that does our staff pay, pays our PAYG, pays our super, makes sure that we're compliant. And it's just going to be so simple.</p>
+      <p class="story__attr"><strong>Griffintine Dairy</strong>, Westbury, Victoria</p>
+      <p class="story__context">Stuart and Belinda Griffin milk 500 cows and employ five staff. Payroll used to run across three different systems and take about ninety minutes, eating into family time or left until late at night.</p>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="container">
+    <h2>How the demo works</h2>
+    <div class="how__grid">
+      <div class="how__step">
+        <span class="how__num">1</span>
+        <h3>Pick a time</h3>
+        <p>Choose a slot that suits you. The whole thing takes 15 minutes.</p>
+      </div>
+      <div class="how__step">
+        <span class="how__num">2</span>
+        <h3>Watch a real pay run</h3>
+        <p>See awards, super and STP handled live, and ask about the pay situations that worry you most.</p>
+      </div>
+      <div class="how__step">
+        <span class="how__num">3</span>
+        <h3>Decide with answers</h3>
+        <p>Walk away knowing exactly what PaySauce would do for your business, either way.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="container">
+    <h2>Book your 15-minute demo</h2>
+    <p class="book__sub">Tell us where to send the invite. A payroll person will confirm your time.</p>
+
+    <!-- LIVE WIDGET: the same HubSpot Meetings scheduler used on /au/book-a-demo
+         (Anna Cochrane, "paysauce-personalised-demo"). It is an iframe: we style
+         around it, its internals are configured in HubSpot meeting-link settings.
+         A styled static form variant exists in git history if a form is preferred. -->
+    <div class="book__widget">
+      <div class="meetings-iframe-container" data-src="https://www.paysauce.com/meetings/anna-cochrane/paysauce-personalised-demo?embed=true"></div>
+    </div>
+    <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
+    <p class="book__privacy">We will only use these details to arrange your demo. <a href="https://www.paysauce.com/nz/privacy-policy">Privacy policy</a></p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <img src="https://www.paysauce.com/hs-fs/hubfs/Logos/PaySauce-horizontal(red).png?width=400&name=PaySauce-horizontal(red).png" alt="PaySauce">
+    <div class="footer__links">
+      <a href="https://www.paysauce.com/nz/privacy-policy">Privacy</a>
+      <a href="https://www.paysauce.com/nz/terms-and-conditions">Terms</a>
+      <a href="https://www.paysauce.com/au/contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<!-- HUBSPOT NOTE: when converting to a HubSpot template, insert {{ standard_footer_includes }} here -->
+</body>
+</html>
