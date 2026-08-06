@@ -239,6 +239,20 @@
   </div>
 </footer>
 
+<script>
+  // Conversion milestone: the HubSpot meetings embed posts a message to the parent
+  // page when a booking completes. Relay it to whatever analytics are present.
+  // Every call is guarded, so nothing breaks if a tool isn't loaded on this host.
+  window.addEventListener("message", function (e) {
+    if (!e.data || e.data.meetingBookSucceeded === undefined) return;
+    try {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: "demo_booked", source: "lp-demo-v1" });
+      if (typeof gtag === "function") gtag("event", "demo_booked", { page: "lp-demo-v1" });
+      if (typeof fbq === "function") fbq("track", "Schedule");
+    } catch (err) { /* analytics must never break the page */ }
+  });
+</script>
 <!-- HUBSPOT NOTE: when converting to a HubSpot template, insert {{ standard_footer_includes }} here -->
 </body>
 </html>
